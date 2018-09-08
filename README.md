@@ -13,7 +13,7 @@ pip install PIL
 2. Enter souce file and edit the follow code:
       `nameOfFile = "imagename.JPG"`
       
-## Parameters
+## PARAMETERS
 
       `Enter patching size: (-1 to exit)`
 
