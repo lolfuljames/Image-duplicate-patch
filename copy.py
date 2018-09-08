@@ -69,6 +69,6 @@ while(1):
 	if(patchSize == -1):
 		print("Good stuff mate")
 		break
-	nameOfFile = "panda.JPG"
+	nameOfFile = "panda.JPG" #enter source image here
 	duplicatePixelCount = input("Enter duplicate count: \n")
 	main(nameOfFile,patchSize,duplicatePixelCount)
