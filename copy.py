@@ -5,17 +5,23 @@ import numpy as np
 def main(nameOfFile,patchSize,duplicatePixelCount):
 	if(patchSize==duplicatePixelCount):
 		return
+	if(patchSize<=0 or duplicatePixelCount<0):
+		return
 	original = misc.imread(nameOfFile)
 	matrixSize = original.shape
 	originalImage = img.fromarray(original,'RGB')
-	if (input("1 for pixel,2 for patch\n")==1):
-		pixel1(original,matrixSize)
-	else:
-		patch(original,matrixSize,patchSize,duplicatePixelCount)
+	patch(original,matrixSize,patchSize,duplicatePixelCount)
+	########################
+	# INITIAL TESTING CODE #
+	# if (input("1 for pixel,2 for patch\n")==1):
+	# 	pixel1(original,matrixSize)
+	# else:
+	# 	patch(original,matrixSize,patchSize,duplicatePixelCount)
+	########################
 
 def pixel1(original,matrixSize):
 
-	############# pixel by pixel no patch
+	############# pixel by pixel no patch ##############
 	cloneArray = np.zeros(matrixSize)
 
 	for i in range (0,matrixSize[0],1):
@@ -23,7 +29,6 @@ def pixel1(original,matrixSize):
 				cloneArray[i][j]=original[i][j]
 
 	printImage(cloneArray)
-
 	#############
 
 def patch(original,matrixSize,patchSize,duplicatePixelCount):
@@ -60,7 +65,10 @@ def printImage(array):
 
 					
 while(1):
-	patchSize = input("Enter patching size: \n")
+	patchSize = input("Enter patching size: (-1 to exit) \n")
+	if(patchSize == -1):
+		print("Good stuff mate")
+		break
 	nameOfFile = "panda.JPG"
 	duplicatePixelCount = input("Enter duplicate count: \n")
 	main(nameOfFile,patchSize,duplicatePixelCount)
