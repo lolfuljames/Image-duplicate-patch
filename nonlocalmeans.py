@@ -68,7 +68,7 @@ def checkMeanMode1(patchArray, patch, cloneArray,thresholdArray): #sliding windo
 				thresholdArray[patch.X][patch.Y].sort()
 				index = thresholdArray[patch.X][patch.Y].index(difference)
 				if(index<patch.threshold):
-					cloneArray[patch.X][patch.Y].insert(index, patchArray[i][j])#either can try compare if >10 then don't add, or just add anythow
+					cloneArray[patch.X][patch.Y].insert(index, patchArray[i][j])#either can try compare if >threshold then don't add, or just add anythow
 
 patch = Patch(patchSize)
 generateArrays(original,patchArray,patchSize)
